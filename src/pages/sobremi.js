@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
+import ContenidoSobremi from '../components/contenidoSobremi';
 
 
 const IndexPage = () => (
   <Layout>
-    <h1>Sobre Alberto Padrón</h1>
+    <ContenidoSobremi />
   </Layout>
  
 )

@@ -4,7 +4,7 @@ import  Image  from 'gatsby-image';
 import styled from '@emotion/styled';
 import {css} from '@emotion/core';
 
-const TextoInicio = styled.div`
+const TextoSobremi = styled.div`
     padding-top: 4rem;
     max-width: 1200px;
     width: 95%;
@@ -12,25 +12,26 @@ const TextoInicio = styled.div`
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr) ;
-        column-gap: 2rem;
+        column-gap: 4rem;
     }
     p {
         line-height: 2;
+        margin-top: 2rem;
         
     }
 `;
 
 
-const ContenidoInicio = () => {
+const ContenidoSobremi = () => {
 
-  const informacion = useStaticQuery(graphql`
+  const resultado = useStaticQuery(graphql`
   query {
-    allDatoCmsPagina(filter: { slug: { eq: "inicio" } }) {
+    allDatoCmsPagina(filter: { slug: { eq: "me" } }) {
       nodes {
         titulo
         contenido
         imagen {
-          fluid {
+          fluid( maxWidth: 1200 ){
             ...GatsbyDatoCmsFluid
           }
         }
@@ -39,11 +40,12 @@ const ContenidoInicio = () => {
   }
   `);
 
-  // console.log(informacion.allDatoCmsPagina.nodes[0]);
+  console.log(resultado.allDatoCmsPagina.nodes[0]);
 
-  const { titulo, contenido, imagen } = informacion.allDatoCmsPagina.nodes[0];
+  const { titulo, contenido, imagen } = resultado.allDatoCmsPagina.nodes[0];
 
   return ( 
+
     <>
       <h2
 
@@ -54,12 +56,13 @@ const ContenidoInicio = () => {
     `}
 
       >{titulo}</h2>
-      <TextoInicio>
+      <TextoSobremi>
         <p>{contenido}</p>
         <Image fluid={imagen.fluid} />
-      </TextoInicio>
+      </TextoSobremi>
     </>
+
    );
 }
  
-export default ContenidoInicio;
+export default ContenidoSobremi;
