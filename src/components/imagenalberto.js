@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 import styled from '@emotion/styled';
 
 const ImageBackground = styled(BackgroundImage)`
-  height: 1600px;
+  height: 1300px;
 `;
 
 const TextoImagen = styled.div`
@@ -43,7 +43,7 @@ const ImagenAlberto = () => {
   <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
     <TextoImagen>
       <h1>ALBERTO PADRÓN</h1>
-      <p>Entrena con el mejor Personal Training Online</p>
+      <h2>Entrena con el mejor Personal Training Online</h2>
     </TextoImagen>
   </ImageBackground> 
   );

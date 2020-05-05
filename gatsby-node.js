@@ -1,7 +1,30 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = async ({ actions, graphql, reporter }) => {
 
-// You can delete this file if you're not using it
+  const resultado = await graphql(`
+  query {
+    allDatoCmsPlan {
+      nodes {
+          slug
+        }
+    }
+  }`);
+
+  // console.log(resultado.data.allDatoCmsPlan.nodes);
+
+  if(resultado.errors) {
+    reporter.panic('No hubo resultados', resultado.errors);
+  }
+
+  // Si hay paginas crear los archivos
+  const planes = resultado.data.allDatoCmsPlan.nodes;
+
+  planes.forEach(plan => {
+    actions.createPage({
+        path: plan.slug,
+        component: require.resolve('./src/components/planes.js'),
+        context: {
+          slug: plan.slug
+        }
+    })
+  })
+}
