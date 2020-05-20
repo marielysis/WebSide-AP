@@ -13,7 +13,7 @@ query($slug: String!) {
         slug
         descripcion
         imagen {
-          fluid(maxWidth:1200) {
+          fluid(maxWidth:900) {
             ...GatsbyDatoCmsFluid
           }
         }

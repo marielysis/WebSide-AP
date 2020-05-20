@@ -12,14 +12,17 @@ const EnlaceHome = styled(Link)`
 `;
 
 
-const Header = () => {
+const Footer = () => {
+  const year = new Date().getFullYear();
   return ( 
-  <header
+    <>
+  <footer
     css={css`
-        background-color: rgba(44,62,80);
-        padding: .5rem;
-        border-bottom: 2px solid #fff;
-    `}
+    background-color: rgba(44,62,80);
+    margin-top: 5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+`}
   >
     <div
       css={css`
@@ -33,13 +36,23 @@ const Header = () => {
         }
       `}
     >
+      <Navegacion />
       <EnlaceHome
         to='/'
       >AP</EnlaceHome>
-      <Navegacion />
     </div>
-  </header>
+  </footer>
+  <p
+    css={css`
+    text-align: center;
+    color: #fff;
+    background-color: rgb(33,44,55);
+    margin: 0;
+    padding: 1rem;
+`}
+  >Todos los Derechos Reservados {year} &copy;</p>
+  </>
    );
 }
  
-export default Header;
+export default Footer;

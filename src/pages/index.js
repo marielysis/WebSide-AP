@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import ImagenAlberto from '../components/imagenalberto';
 import ContenidoInicio from '../components/contenidoInicio';
 import PlanPreview from '../components/planPreview';
+import ContenidoInstagram from '../components/contenidoInstagram';
 import usePlanes from '../hooks/use-planes';
 
 const ListadoPlanes = styled.ul`
@@ -23,7 +24,7 @@ const IndexPage = () => {
   
   const planes = usePlanes();
 
-  console.log(planes);
+  // console.log(planes);
 
   return (
     <Layout>
@@ -48,6 +49,8 @@ const IndexPage = () => {
           />
         ))}  
       </ListadoPlanes> 
+      
+      <ContenidoInstagram />
     </Layout>
    
   )

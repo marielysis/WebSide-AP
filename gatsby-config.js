@@ -34,5 +34,11 @@ module.exports = {
         apiToken: `a895ca79a2f69e62a6d45de6c3eddb`,
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `albertopadrontrainer`,
+      },
+    },
   ],
 }

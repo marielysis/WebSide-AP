@@ -31,7 +31,7 @@ const ContenidoSobremi = () => {
         titulo
         contenido
         imagen {
-          fluid( maxWidth: 1200 ){
+          fluid( maxWidth: 1000 ){
             ...GatsbyDatoCmsFluid
           }
         }
