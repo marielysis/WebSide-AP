@@ -22,6 +22,17 @@ const TextoImagen = styled.div`
     
     }
 `;
+const Cta = styled.a`
+  display: inline-block;
+  background: #4ba26598;
+  padding: 20px 40px;
+  margin-top: 24px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+`;
 
 const ImagenAlberto = () => {
 
@@ -30,7 +41,7 @@ const ImagenAlberto = () => {
     image: file(relativePath: { eq:"alberto.jpg"}) {
       sharp:childImageSharp {
         fluid {
-          srcSetWebp
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -40,9 +51,9 @@ const ImagenAlberto = () => {
   return ( 
   <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
     <TextoImagen>
-      <h1>ALBERTO PADRÓN</h1>
-      <h2>Entrena con el mejor Personal Training Online</h2>
-      <button>Comienza Yá</button>
+      <h1>ALBERTO PADRÓN TRAINER</h1>
+      <h2>Transformando cuerpos y mentes</h2>
+      <Cta href="#">Comienza ahora</Cta>
     </TextoImagen>
   </ImageBackground> 
   );

@@ -6,6 +6,7 @@ import ImagenAlberto from '../components/imagenalberto';
 import ContenidoInicio from '../components/contenidoInicio';
 import PlanPreview from '../components/planPreview';
 import ContenidoInstagram from '../components/contenidoInstagram';
+import ContenidoYoutube from '../components/contenidoYoutube';
 import usePlanes from '../hooks/use-planes';
 
 const ListadoPlanes = styled.ul`
@@ -51,6 +52,8 @@ const IndexPage = () => {
       </ListadoPlanes> 
       
       <ContenidoInstagram />
+      <ContenidoYoutube />
+      
     </Layout>
    
   )

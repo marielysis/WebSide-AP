@@ -21,10 +21,18 @@ const Layout = (props) => {
               font-size: 1.6rem;
               line-height: 1.5;
               font-family: 'Montserrat', sans-serif;
+              background-color: #000;
+              color: #fff;
               
+            }
+            h1, h2, h3 {
+              margin: 0;
+              line-height: 1.5;
+              color: #FFFFFF;
             }
             h1, h2 {
               font-family: 'Montserrat', serif;
+              
             }
             h3 {
               font-family: 'Montserrat', sans-serif;
@@ -37,7 +45,7 @@ const Layout = (props) => {
         `}
       />
       <Helmet>
-        <title>Alberto Padron</title>
+        <title>Alberto Padron Trainer</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,200;1,300;1,400&display=swap" rel="stylesheet"/>
       </Helmet>

@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 
+
 const InstagramPost = styled.div`
   max-width: 1200px;
   width: 95%;
@@ -15,35 +16,32 @@ const InstagramPost = styled.div`
     column-gap: 3rem;
   }
 `
+const ImagenIg = styled(Image)`
+  with: 100%;
+  height: 200px;
+`;
 
 const ContenidoInstagram = () => {
   const resultado = useStaticQuery(graphql`
-    query {
-      allInstaNode {
-        edges {
-          node {
-            id
-            likes
-            comments
-            mediaType
-            preview
-            original
-            timestamp
-            caption
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1200) {
-                  ...GatsbyImageSharpFluid
-                }
+  query {
+    allInstaNode {
+      edges {
+        node {
+          caption
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
         }
       }
     }
+  }
   `)
 
-  //  console.log(resultado.allInstaNode.edges);
+
 
   const insta = resultado.allInstaNode.edges
 
@@ -58,17 +56,17 @@ const ContenidoInstagram = () => {
             margin-bottom: 2rem;
           `}
         >
-          <Image fluid={inst.node.localFile.childImageSharp.fluid} />
+          <ImagenIg tag="img" fluid={inst.node.localFile.childImageSharp.fluid} /> {/* fotos de instagram */}
           <div
             css={css`
               padding: 1rem;
             `}
           >
-            <p
+            {/* <p
                           css={css`
                           font-size: 12px;
                         `}
-            >{inst.node.caption}</p>
+            >{inst.node.caption}</p> */}
           </div>
         </div>
       ))}

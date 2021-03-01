@@ -40,5 +40,12 @@ module.exports = {
         username: `albertopadrontrainer`,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
+    },
+  
   ],
 }
